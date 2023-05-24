@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div *ngIf="!loadingSpinner" class="body">
+
+    <img class="logo" src="../../../assets/img/login.png" alt="" />
+    <h1>Login</h1>
+    <div class="form-floating mb-3">
+      <input [(ngModel)]="username" type="text" class="form-control" placeholder="Ingrese usuario" />
+      <label>Usuario</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input [(ngModel)]="password" type="password" class="form-control" placeholder="Ingrese Password" />
+      <label>Password</label>
+      <div class="d-grid gap-2 mt-4">
+        <button (click)="login()" type="button" class="btn btn-primary btn-lg">Aceptar</button>
+      </div>
+      &nbsp;
+      <p>No tienes cuenta ? <a routerLink="/signIn">Registrarse</a></p>
+    </div>
+  </div>
+  <app-spinner *ngIf="loadingSpinner"></app-spinner>
+</div>
